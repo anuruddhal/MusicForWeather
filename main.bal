@@ -1,6 +1,6 @@
 import ballerina/http;
 
-listener http:Listener httpDefaultListener = http:getDefaultListener();
+listener http:Listener httpDefaultListener = new (9090);
 
 service /MusicMood on httpDefaultListener {
     resource function get playlist(string location) returns error|json|http:InternalServerError {
